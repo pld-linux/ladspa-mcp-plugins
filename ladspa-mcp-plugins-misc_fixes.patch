@@ -1,6 +1,24 @@
-diff -aurN MCP-plugins.orig/ladspaplugin.h MCP-plugins/ladspaplugin.h
---- MCP-plugins.orig/ladspaplugin.h	2003-04-24 19:03:19.000000000 +0200
-+++ MCP-plugins/ladspaplugin.h	2003-10-26 01:43:23.326190032 +0200
+diff -ur MCP-plugins-0.3.0.orig/Makefile MCP-plugins-0.3.0/Makefile
+--- MCP-plugins-0.3.0.orig/Makefile	2004-03-12 21:56:29.000000000 +0100
++++ MCP-plugins-0.3.0/Makefile	2004-10-05 01:56:12.313134304 +0200
+@@ -1,4 +1,5 @@
+ CPPFLAGS += -I. -fPIC -D_REENTRANT -Wall -O4
++INSTALL_PLUGINS_DIR=/usr/lib/ladspa
+ 
+ 
+ all:	mvclpf24.so mvchpf24.so cs_phaser.so cs_chorus.so
+@@ -33,7 +34,7 @@
+ 
+ 
+ install:
+-	cp  *.so /usr/lib/ladspa
++	cp  *.so $(DESTDIR)$(INSTALL_PLUGINS_DIR)
+ 
+ 
+ DIR := $(shell basename `pwd`)
+diff -ur MCP-plugins-0.3.0.orig/ladspaplugin.h MCP-plugins-0.3.0/ladspaplugin.h
+--- MCP-plugins-0.3.0.orig/ladspaplugin.h	2003-12-01 21:18:18.000000000 +0100
++++ MCP-plugins-0.3.0/ladspaplugin.h	2004-10-05 01:55:30.852437288 +0200
 @@ -21,7 +21,7 @@
  #define __LADSPAPLUGIN_H
  
@@ -10,15 +28,3 @@ diff -aurN MCP-plugins.orig/ladspaplugin.h MCP-plugins/ladspaplugin.h
  
  
  
-diff -aurN MCP-plugins.orig/Makefile MCP-plugins/Makefile
---- MCP-plugins.orig/Makefile	2003-07-29 01:16:09.000000000 +0200
-+++ MCP-plugins/Makefile	2003-10-26 01:43:02.379374432 +0200
-@@ -28,7 +28,7 @@
- 
- 
- install:
--	cp  *.so /usr/lib/ladspa
-+	cp  *.so $(DESTDIR)/usr/lib/ladspa
- 
- clean:
- 	rm -f *~ *.o *.so

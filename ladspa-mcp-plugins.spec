@@ -12,6 +12,7 @@ Patch0:		%{name}-misc_fixes.patch
 URL:		http://alsamodular.sourceforge.net/
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
+Requires:	ladspa-common
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -21,7 +22,7 @@ phaser effects.
 
 %description -l pl
 Ta wtyczka LADSPA zawiera cyfrow± implementacjê sterowanego napiêciem
-filtra dolnoprzepustowego (u¿ywany w syntezatorach Moog) oraz efekty
+filtra dolnoprzepustowego (u¿ywanego w syntezatorach Moog) oraz efekty
 chorus i phaser.
 
 %package ams-examples
@@ -34,20 +35,24 @@ Requires:	alsa-modular-synth
 Some examples for Alsa Modular Synth.
 
 %description ams-examples -l pl
-Pare przyk³adów wykorzystania z Alsa Modular Synth.
+Parê przyk³adów wykorzystania wtyczki z Alsa Modular Synth.
 
 %prep
 %setup -q -n %{_name}-%{version}
 %patch -p1
 
 %build
-%{__make} CPPFLAGS="-I. -I%{_includedir} -fPIC -D_REENTRANT -Wall %{rpmcflags}"
+%{__make} \
+	CPPFLAGS="-I. -fPIC -D_REENTRANT -Wall %{rpmcflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir}/ladspa,%{_datadir}/ams}
-%{__make} DESTDIR=$RPM_BUILD_ROOT install
-cp ams/* $RPM_BUILD_ROOT%{_datadir}/ams
+
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT install
+
+install ams/* $RPM_BUILD_ROOT%{_datadir}/ams
 
 %clean
 rm -rf $RPM_BUILD_ROOT

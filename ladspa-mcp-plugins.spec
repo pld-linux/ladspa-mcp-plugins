@@ -2,12 +2,12 @@
 Summary:	The Moog VCF, chorus and phaser LADSPA plugins
 Summary(pl):	Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
-Version:	0.2.2
+Version:	0.3.0
 Release:	1
 License:	GPL
 Group:		Applications/Sound
 Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
-# Source0-md5:	97c7956fadced24be2768d1abe04aead
+# Source0-md5:	47a4edef1d6062803c35de7dd81ebbd6
 Patch0:		%{name}-misc_fixes.patch
 URL:		http://users.skynet.be/solaris/linuxaudio/
 BuildRequires:	ladspa-devel

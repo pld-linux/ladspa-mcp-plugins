@@ -30,6 +30,7 @@ Summary:	Examples for Alsa Modular Synth
 Summary(pl):	Przyk³ady dla Alsa Modular Synth
 Group:		Applications/Sound
 Requires:	alsa-modular-synth
+Obsoletes:	ladspa-mcp-plugins-ams-examples
 
 %description alsa-modular-synth-examples
 Some examples for Alsa Modular Synth.

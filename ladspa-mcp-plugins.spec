@@ -25,16 +25,16 @@ Ta wtyczka LADSPA zawiera cyfrow± implementacjê sterowanego napiêciem
 filtra dolnoprzepustowego (u¿ywanego w syntezatorach Moog) oraz efekty
 chorus i phaser.
 
-%package ams-examples
+%package alsa-modular-synth-examples
 Summary:	Examples for Alsa Modular Synth
 Summary(pl):	Przyk³ady dla Alsa Modular Synth
 Group:		Applications/Sound
 Requires:	alsa-modular-synth
 
-%description ams-examples
+%description alsa-modular-synth-examples
 Some examples for Alsa Modular Synth.
 
-%description ams-examples -l pl
+%description alsa-modular-synth-examples -l pl
 Parê przyk³adów wykorzystania wtyczki z Alsa Modular Synth.
 
 %prep
@@ -47,12 +47,12 @@ Parê przyk³adów wykorzystania wtyczki z Alsa Modular Synth.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir}/ladspa,%{_datadir}/ams}
+install -d $RPM_BUILD_ROOT{%{_libdir}/ladspa,%{_datadir}/ams/examples}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT install
 
-install ams/* $RPM_BUILD_ROOT%{_datadir}/ams
+install ams/* $RPM_BUILD_ROOT%{_datadir}/ams/examples
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -62,6 +62,6 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS README
 %attr(755,root,root) %{_libdir}/ladspa/*.so
 
-%files ams-examples
+%files alsa-modular-synth-examples
 %defattr(644,root,root,755)
-%{_datadir}/ams/*.ams
+%{_datadir}/ams/examples/*.ams

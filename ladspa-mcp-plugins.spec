@@ -13,7 +13,7 @@ URL:		http://users.skynet.be/solaris/linuxaudio/
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
 Requires:	ladspa-common
-Obsoletes:	%{name}-alsa-modular-synth-examples
+Obsoletes:	ladspa-mcp-plugins-alsa-modular-synth-examples
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -39,7 +39,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir}/ladspa,%{_datadir}/ams/examples}
 
 %{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT install
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT

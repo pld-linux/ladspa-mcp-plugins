@@ -2,12 +2,12 @@
 Summary:	The Moog VCF, chorus and phaser LADSPA plugins
 Summary(pl):	Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
-Version:	0.0.2
+Version:	0.2.1b
 Release:	1
 License:	GPL
 Group:		Applications/Sound
-Source0:	http://alsamodular.sourceforge.net/%{_name}.tar.bz2
-# Source0-md5:	d8eeccdd9c5a58ded90c018e88549c4a
+Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
+# Source0-md5:	69d515102f0683b51f3571866bbd3f76
 Patch0:		%{name}-misc_fixes.patch
 Patch1:		%{name}-mvclpf24.patch
 URL:		http://alsamodular.sourceforge.net/
@@ -39,9 +39,9 @@ Some examples for Alsa Modular Synth.
 Parê przyk³adów wykorzystania wtyczki z Alsa Modular Synth.
 
 %prep
-%setup -q -n %{_name}
+%setup -q -n %{_name}-%{version}
 %patch0 -p1
-%patch1 -p0
+#%patch1 -p0
 
 %build
 %{__make} \

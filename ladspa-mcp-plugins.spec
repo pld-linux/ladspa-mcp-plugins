@@ -9,7 +9,6 @@ Group:		Applications/Sound
 Source0:	http://alsamodular.sourceforge.net/%{_name}-%{version}.tar.bz2
 # Source0-md5:	69d515102f0683b51f3571866bbd3f76
 Patch0:		%{name}-misc_fixes.patch
-Patch1:		%{name}-mvclpf24.patch
 URL:		http://alsamodular.sourceforge.net/
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
@@ -41,7 +40,6 @@ Parê przyk³adów wykorzystania wtyczki z Alsa Modular Synth.
 %prep
 %setup -q -n %{_name}-%{version}
 %patch0 -p1
-#%patch1 -p0
 
 %build
 %{__make} \

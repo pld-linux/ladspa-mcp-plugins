@@ -1,6 +1,6 @@
 %define		_name MCP-plugins
 Summary:	The Moog VCF, chorus and phaser LADSPA plugins
-Summary(pl):	Wtyczki LADSPA - Moog VCF, chorus i phaser
+Summary(pl.UTF-8):   Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
 Version:	0.3.0
 Release:	2
@@ -21,9 +21,9 @@ This LADSPA plugin contains a digital implementation of the voltage
 controlled lowpass filter (used in Moog synthesizers), chorus and
 phaser effects.
 
-%description -l pl
-Ta wtyczka LADSPA zawiera cyfrow± implementacjê sterowanego napiêciem
-filtra dolnoprzepustowego (u¿ywanego w syntezatorach Moog) oraz efekty
+%description -l pl.UTF-8
+Ta wtyczka LADSPA zawiera cyfrowÄ… implementacjÄ™ sterowanego napiÄ™ciem
+filtra dolnoprzepustowego (uÅ¼ywanego w syntezatorach Moog) oraz efekty
 chorus i phaser.
 
 %prep

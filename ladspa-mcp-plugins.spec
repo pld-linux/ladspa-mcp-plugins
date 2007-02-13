@@ -1,6 +1,6 @@
 %define		_name MCP-plugins
 Summary:	The Moog VCF, chorus and phaser LADSPA plugins
-Summary(pl.UTF-8):   Wtyczki LADSPA - Moog VCF, chorus i phaser
+Summary(pl.UTF-8):	Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
 Version:	0.3.0
 Release:	2

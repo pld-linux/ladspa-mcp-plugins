@@ -4,7 +4,7 @@ Summary(pl.UTF-8):	Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
 Version:	0.3.0
 Release:	2
-License:	GPL
+License:	GPL v2+
 Group:		Applications/Sound
 #Source0Download: http://users.skynet.be/solaris/linuxaudio/getit.html
 Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
@@ -37,7 +37,7 @@ chorus i phaser.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_libdir}/ladspa,%{_datadir}/ams/examples}
+install -d $RPM_BUILD_ROOT%{_libdir}/ladspa
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \

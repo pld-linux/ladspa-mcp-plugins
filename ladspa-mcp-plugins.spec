@@ -6,6 +6,7 @@ Version:	0.3.0
 Release:	2
 License:	GPL
 Group:		Applications/Sound
+#Source0Download: http://users.skynet.be/solaris/linuxaudio/getit.html
 Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
 # Source0-md5:	47a4edef1d6062803c35de7dd81ebbd6
 Patch0:		%{name}-misc_fixes.patch
@@ -48,4 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS README
-%attr(755,root,root) %{_libdir}/ladspa/*.so
+%attr(755,root,root) %{_libdir}/ladspa/cs_chorus.so
+%attr(755,root,root) %{_libdir}/ladspa/cs_phaser.so
+%attr(755,root,root) %{_libdir}/ladspa/mvchpf24.so
+%attr(755,root,root) %{_libdir}/ladspa/mvclpf24.so

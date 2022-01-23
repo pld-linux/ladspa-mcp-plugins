@@ -1,20 +1,19 @@
-%define		_name MCP-plugins
 Summary:	The Moog VCF, chorus and phaser LADSPA plugins
 Summary(pl.UTF-8):	Wtyczki LADSPA - Moog VCF, chorus i phaser
 Name:		ladspa-mcp-plugins
-Version:	0.3.0
-Release:	2
+Version:	0.4.0
+Release:	1
 License:	GPL v2+
 Group:		Applications/Sound
-#Source0Download: http://users.skynet.be/solaris/linuxaudio/getit.html
-Source0:	http://users.skynet.be/solaris/linuxaudio/downloads/%{_name}-%{version}.tar.bz2
-# Source0-md5:	47a4edef1d6062803c35de7dd81ebbd6
+Source0:	http://kokkinizita.linuxaudio.org/linuxaudio/downloads/MCP-plugins-%{version}.tar.bz2
+# Source0-md5:	2a0fc50281a150eb781dbcfe2fb9c532
 Patch0:		%{name}-misc_fixes.patch
-URL:		http://users.skynet.be/solaris/linuxaudio/
+URL:		http://kokkinizita.linuxaudio.org/linuxaudio/ladspa/index.html
 BuildRequires:	ladspa-devel
 BuildRequires:	libstdc++-devel
 Requires:	ladspa-common
-Obsoletes:	ladspa-mcp-plugins-alsa-modular-synth-examples
+Obsoletes:	ladspa-mcp-plugins-amsynth-examples < 0.2.2
+Obsoletes:	ladspa-mcp-plugins-alsa-modular-synth-examples < 0.2.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -28,12 +27,15 @@ filtra dolnoprzepustowego (używanego w syntezatorach Moog) oraz efekty
 chorus i phaser.
 
 %prep
-%setup -q -n %{_name}-%{version}
+%setup -q -n MCP-plugins-%{version}
 %patch0 -p1
 
 %build
+CPPFLAGS="%{rpmcppflags}" \
+CXXFLAGS="%{rpmcxxflags}" \
+LDLAGS="%{rpmldflags}" \
 %{__make} \
-	CPPFLAGS="-I. -fPIC -D_REENTRANT -Wall %{rpmcflags}"
+	CXX="%{__cxx}" \
 
 %install
 rm -rf $RPM_BUILD_ROOT
